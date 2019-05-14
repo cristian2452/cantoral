@@ -53,7 +53,7 @@ public class SongsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        View rowView = mInflater.inflate(R.layout.list_item_recipe, parent, false);
+        View rowView = mInflater.inflate(R.layout.list_item_song, parent, false);
         // Get title element
         TextView titleTextView = rowView.findViewById(R.id.recipe_list_title);
         // Get subtitle element
@@ -67,7 +67,7 @@ public class SongsAdapter extends BaseAdapter {
         titleTextView.setText(recipe.title);
         subtitleTextView.setText(recipe.description);
         detailTextView.setText(recipe.label);
-
+/*
         Picasso.get()
                 .load(recipe.imageUrl).placeholder(R.mipmap.ic_launcher).into(thumbnailImageView);
 
@@ -81,8 +81,8 @@ public class SongsAdapter extends BaseAdapter {
         Typeface detailTypeFace = Typeface.createFromAsset(mContext.getAssets(), "fonts/Quicksand-Bold.otf");
         detailTextView.setTypeface(detailTypeFace);
 
-        detailTextView.setTextColor(ContextCompat.getColor(mContext, LABEL_COLORS.get(recipe.label)));
-
+//        detailTextView.setTextColor(ContextCompat.getColor(mContext, LABEL_COLORS.get(recipe.label)));
+*/
         return rowView;
     }
 }

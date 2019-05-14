@@ -12,7 +12,7 @@ public class SongsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe_detail);
+        setContentView(R.layout.activity_songs_detail);
         // 1
         String title = this.getIntent().getExtras().getString("title");
         String description = this.getIntent().getExtras().getString("description");

@@ -21,19 +21,19 @@ public class Songs {
 
         try {
             // Load data
-            String jsonString = loadJsonFromAsset("recipes.json", context);
+            String jsonString = loadJsonFromAsset("cantoral.json", context);
             JSONObject json = new JSONObject(jsonString);
-            JSONArray recipes = json.getJSONArray("recipes");
+            JSONArray recipes = json.getJSONArray("cantos");
 
             // Get Songs objects from data
             for(int i = 0; i < recipes.length(); i++){
                 Songs recipe = new Songs();
 
                 recipe.title = recipes.getJSONObject(i).getString("title");
-                recipe.description = recipes.getJSONObject(i).getString("description");
-                recipe.imageUrl = recipes.getJSONObject(i).getString("image");
-                recipe.instructionUrl = recipes.getJSONObject(i).getString("url");
-                recipe.label = recipes.getJSONObject(i).getString("dietLabel");
+                recipe.description = recipes.getJSONObject(i).getString("key");
+//                recipe.imageUrl = recipes.getJSONObject(i).getString("image");
+  //              recipe.instructionUrl = recipes.getJSONObject(i).getString("url");
+    //            recipe.label = recipes.getJSONObject(i).getString("dietLabel");
 
                 recipeList.add(recipe);
             }

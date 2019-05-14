@@ -17,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView mListView = findViewById(R.id.recipe_list_view);
+        ListView mListView = findViewById(R.id.songs_list_view);
 
-        final ArrayList<Recipe> recipeList = Recipe.getRecipesFromFile("recipes.json", this);
+        final ArrayList<Songs> recipeList = Songs.getRecipesFromFile("cantoral.json", this);
 
-        RecipeAdapter adapter = new RecipeAdapter(this, recipeList);
+        SongsAdapter adapter = new SongsAdapter(this, recipeList);
         mListView.setAdapter(adapter);
 
         final Context context = this;
@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // 1
-                Recipe selectedRecipe = recipeList.get(position);
+                Songs selectedRecipe = recipeList.get(position);
                 // 2
-                Intent detailIntent = new Intent(context, RecipeDetailActivity.class);
+                Intent detailIntent = new Intent(context, SongsDetailActivity.class);
                 // 3
                 detailIntent.putExtra("title", selectedRecipe.title);
                 detailIntent.putExtra("description", selectedRecipe.description);
